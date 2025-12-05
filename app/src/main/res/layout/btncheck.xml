@@ -10,7 +10,7 @@
         android:layout_gravity="center"
         android:elevation="1dp"/>
     <Button
-        android:id="@+id/btncreate"
+        android:id="@+id/btncheck"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:backgroundTint="#0000"/>
