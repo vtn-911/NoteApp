@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingTop="20dp"
+    tools:context=".ReadScreen">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+        <include layout="@layout/btnback"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ghi chú"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:layout_centerInParent="true"
+            android:gravity="center"/>
+        <include layout="@layout/btnchange"
+            android:id="@+id/includechange"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"/>
+        <include layout="@layout/btncheck"
+            android:id="@+id/includecheck"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"/>
+    </RelativeLayout>
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <EditText
+            android:id="@+id/edtTitle2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:hint="Tiêu đề"
+            android:inputType="textMultiLine"
+            android:minLines="2"
+            android:paddingLeft="20dp"
+            android:background="@drawable/bginput"/>
+        <TextView
+            android:id="@+id/tvTitle2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="TITLE"
+            android:layout_margin="16dp"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            android:textColor="@color/black"/>
+    </FrameLayout>
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <EditText
+            android:id="@+id/edtContent2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:hint="Nội dung"
+            android:inputType="textMultiLine"
+            android:minLines="5"
+            android:paddingLeft="20dp"
+            android:paddingTop="10dp"
+            android:gravity="top"
+            android:background="@drawable/bginput"/>
+        <TextView
+            android:id="@+id/tvContent2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Content"
+            android:layout_margin="18dp"
+            android:textSize="18sp"
+            android:textColor="@color/black"/>
+    </FrameLayout>
+</LinearLayout>

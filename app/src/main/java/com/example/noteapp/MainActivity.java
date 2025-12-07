@@ -53,5 +53,6 @@ public class MainActivity extends AppCompatActivity {
             launcher.launch(intent); // sẽ gửi và chờ dữ liệu từ NoteScreen trả về
         });
 
+
     }
 }

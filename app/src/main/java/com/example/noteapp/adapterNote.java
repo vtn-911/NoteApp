@@ -2,6 +2,7 @@ package com.example.noteapp;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -39,6 +40,17 @@ public class adapterNote extends ArrayAdapter<itemNote> {
         btnDel.setOnClickListener(v -> {
             itemNotes.remove(position);
             notifyDataSetChanged();
+        });
+
+        row.setOnClickListener(v->{
+            Intent intent = new Intent(adapterNote.this.getContext(), ReadScreen.class);
+            String title = tvTitle.getText().toString();
+            String content = tvContent.getText().toString();
+            int id = n.getID();
+            intent.putExtra("id", id);
+            intent.putExtra("title", title);
+            intent.putExtra("content",content);
+            context.startActivity(intent);
         });
         return row;
     }
