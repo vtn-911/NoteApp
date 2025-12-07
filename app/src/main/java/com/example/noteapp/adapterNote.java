@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -17,7 +18,7 @@ public class adapterNote extends ArrayAdapter<itemNote> {
     ArrayList<itemNote> itemNotes;
     int layoutID;
 
-
+    Button btnDel;
     public adapterNote (Activity context, int layoutID, ArrayList<itemNote> itemNotes){
         super(context,layoutID,itemNotes);
         this.context = context;
@@ -29,9 +30,16 @@ public class adapterNote extends ArrayAdapter<itemNote> {
         View row = inflater.inflate(layoutID, null);
         TextView tvTitle = row.findViewById(R.id.tvTitle);
         TextView tvContent = row.findViewById(R.id.tvContent);
+        btnDel = row.findViewById(R.id.btndelete);
         itemNote n = itemNotes.get(position);
         tvTitle.setText(n.getTitle());
         tvContent.setText(n.getContent());
+
+        // Sự kiện xóa item
+        btnDel.setOnClickListener(v -> {
+            itemNotes.remove(position);
+            notifyDataSetChanged();
+        });
         return row;
     }
 }

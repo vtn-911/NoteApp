@@ -12,7 +12,7 @@
         android:textColor="#FF3030"
         android:elevation="1dp"/>
     <Button
-        android:id="@+id/btncreate"
+        android:id="@+id/btndelete"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:backgroundTint="#0000"/>
