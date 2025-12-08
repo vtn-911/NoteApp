@@ -7,6 +7,7 @@ public class itemNote implements Serializable {
     int ID;
 
     public itemNote(int ID,String title, String content){
+        this.ID = ID;
         this.title = title;
         this.content = content;
     }
@@ -21,5 +22,13 @@ public class itemNote implements Serializable {
 
     public String getContent() {
         return content;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public void setContent(String content) {
+        this.content = content;
     }
 }

@@ -30,8 +30,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"/>
-        <include layout="@layout/btncheck"
-            android:id="@+id/includecheck"
+        <include layout="@layout/btnsave"
+            android:id="@+id/includesave"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"/>

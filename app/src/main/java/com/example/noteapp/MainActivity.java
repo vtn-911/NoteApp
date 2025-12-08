@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
     ListView lvNote;
     ArrayList<itemNote> arrNote;
     adapterNote adapter;
-    ActivityResultLauncher<Intent> launcher;
+    ActivityResultLauncher<Intent> launcher, launcherUpdate;
     Intent intent;
 
     @Override
@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
 
         btnCreate = findViewById(R.id.btncreate);
 
-        // Để nhận và xử lý kết quả trả về
+        // Nhận và xử lý kết quả trả về từ NoteScreen (Create)
         launcher = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), result -> {
               if(result.getResultCode() == RESULT_OK){
                    Intent data = result.getData();
@@ -46,6 +46,17 @@ public class MainActivity extends AppCompatActivity {
                    arrNote.addAll(list);
                    adapter.notifyDataSetChanged();
               }
+        });
+        // Nhận và Cập nhật lại nội dung đã thay đổi từ ReadScreen (Update)
+        launcherUpdate = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), results -> {
+            if (results.getResultCode() == RESULT_OK){
+                Intent newData = results.getData();
+                int ID = newData.getIntExtra("id",-1);
+                String updateTitle = newData.getStringExtra("responetitle");
+                String updateContent = newData.getStringExtra("responeContent");
+                adapter.updateData(ID,updateTitle,updateContent);
+                adapter.notifyDataSetChanged();
+            }
         });
         // Sự kiện thêm ghi chú (create)
         btnCreate.setOnClickListener(v -> {
