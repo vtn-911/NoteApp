@@ -17,8 +17,8 @@ import androidx.core.view.WindowInsetsCompat;
 public class ReadScreen extends AppCompatActivity {
     TextView tvTitle2, tvContent2;
     EditText edtTitle2, edtContent2;
-    Button btnBack, btnChange, btnSave;
-    View includeChange, includeSave;
+    Button btnBack, btnChange, btnCheck;
+    View includeChange, includeCheck;
     Intent intent;
 
     @Override
@@ -31,16 +31,16 @@ public class ReadScreen extends AppCompatActivity {
 
         includeChange = findViewById(R.id.includechange);
         btnChange = includeChange.findViewById(R.id.btnchange);
-        includeSave = findViewById(R.id.includesave);
-        btnSave = includeSave.findViewById(R.id.btnsave);
+        includeCheck = findViewById(R.id.includecheck);
+        btnCheck = includeCheck.findViewById(R.id.btncheck);
 
         tvTitle2 = findViewById(R.id.tvTitle2);
         tvContent2 = findViewById(R.id.tvContent2);
         edtTitle2 = findViewById(R.id.edtTitle2);
         edtContent2 = findViewById(R.id.edtContent2);
 
-        includeSave.setVisibility(View.GONE);
-        btnSave.setVisibility(View.GONE);
+        includeCheck.setVisibility(View.GONE);
+        btnCheck.setVisibility(View.GONE);
         edtTitle2.setVisibility(View.GONE);
         edtContent2.setVisibility(View.GONE);
 
@@ -63,8 +63,8 @@ public class ReadScreen extends AppCompatActivity {
             btnChange.setVisibility(View.GONE);
 
             // Hiện btnSave và edittext để tiến hành chỉnh sửa và lưu
-            includeSave.setVisibility(View.VISIBLE);
-            btnSave.setVisibility(View.VISIBLE);
+            includeCheck.setVisibility(View.VISIBLE);
+            btnCheck.setVisibility(View.VISIBLE);
             edtTitle2.setVisibility(View.VISIBLE);
             edtContent2.setVisibility(View.VISIBLE);
 
@@ -72,7 +72,7 @@ public class ReadScreen extends AppCompatActivity {
             edtContent2.setText(content);
         });
         // Lấy data từ edittext truyền qua MainActivity để xử lý tiếp
-        btnSave.setOnClickListener(v ->{
+        btnCheck.setOnClickListener(v ->{
             String responeTitle = edtTitle2.getText().toString();
             String responeContent = edtContent2.getText().toString();
             Intent intentRespone = new Intent();
